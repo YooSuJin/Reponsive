@@ -373,8 +373,9 @@ color:#878787; line-height: 18px; }
 .blog1 img {width: 100%;}
 .blog1 .img-retina {display: none;}
 
-/*해상도에따른 이미지 띄우기*/
 
+/*미디어쿼리*/
+/*해상도에따른 이미지 띄우기*/
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
         only screen and (min-device-pixel-ratio: 1.5),
         only screen and (min-resolution: 1.5dppx) {
@@ -389,6 +390,7 @@ color:#878787; line-height: 18px; }
 .blog2 .img-retina {background-image: url(../img/blog4_@1.jpg); background-size: cover;}
 
 
+/*미디어쿼리*/
 /*해상도에따른 이미지 띄우기*/
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
         only screen and (min-device-pixel-ratio: 2),
@@ -401,6 +403,45 @@ color:#878787; line-height: 18px; }
        {.blog2 .img-retina{background-image: url(../img/blog4_@3.jpg);}}
 
 
+/*이미지 슬라이드 */
+.slider figure {position: relative;}
+.slider figcaption { 
+    position: absolute; 
+    bottom: 0; left: 0; width: 100%; padding: 20px; 
+    box-sizing: border-box; background-color: rgba(0,0,0,0.5);
+    font-size: 18px;
+    color: #fff;
+
+
+}
+.slider figcaption em {display: block; 
+    font-weight: bold; font-size: 28px;
+    text-transform: uppercase;
+    font-family: 'Abel', sans-serif;
+    opacity: 0;
+    transition: all .84s ease;
+    transform: translateX(50px);
+}
+.slider figcaption span {display: block; 
+    overflow: hidden; text-overflow: ellipsis ; white-space: nowrap
+    opacity: 0;
+    transition: all .84s .2s ease;
+    transform: translateX(50px);
+}
+        
+/* 움직일때마다 활성화 되는 태그*/
+.slider .slick-active figcaption em {opacity: 1;transform: translateX(0px);}
+.slider .slick-active figcaption span {opacity: 1;transform: translateX(0px);}
+/*슬라이더버튼*/
+.slider .slick-dots {display: block; width: 100%; text-align: center;}
+.slider .slick-dots li {display: inline-block; width: 15px; height: 15px; margin: 5px; }
+.slider .slick-dots li button {
+    font-size: 0; line-height: 0;
+    display: block; width: 15px; height: 15px;
+    cursor: pointer;
+    background: #5dbfeb;
+    border-radius: 50%;
+}
 
 
 
@@ -435,7 +476,6 @@ color:#878787; line-height: 18px; }
 
 
 /*미디어쿼리*/
-
 /*화면 너비 0~1220px*/
 @media (max-width: 1220px) {
     .container {
