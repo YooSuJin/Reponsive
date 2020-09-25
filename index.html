@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/lightgallery.css" />
     
     
     <!-- Facebook meta tags -->
@@ -296,21 +297,44 @@
              
              
              <article class="column col5">
-             <h4 class="col_tit"> Title </h4>
-             <p class="col_desc">이 곳은 설명 부분 입니다</p>
-             <!--내용입력 -->
-             
-             <!-- 내용입력끝//-->
+             <h4 class="col_tit"> Blend Effect </h4>
+             <p class="col_desc">Background-blend-mode와 mix-blend-mode 효과 이미지입니다.</p>
+             <!--라이트박스 -->
+             <div class="lightbox square clearfix">
+                <a href="img/light01_s.jpg"><img src="img/light01.jpg" alt="이미지"><em>blur</em></a>
+                <a href="img/light02_s.jpg"><img src="img/light02.jpg" alt="이미지"><em>brightness</em></a>
+                <a href="img/light03_s.jpg"><img src="img/light03.jpg" alt="이미지"><em>contrast</em></a>
+                <a href="img/light04_s.jpg"><img src="img/light04.jpg" alt="이미지"><em>grayscale</em></a>
+                <a href="img/light05_s.jpg"><img src="img/light05.jpg" alt="이미지"><em>hur-rotate</em></a>
+                <a href="img/light06_s.jpg"><img src="img/light06.jpg" alt="이미지"><em>indvert</em></a>
+                <a href="img/light07_s.jpg"><img src="img/light07.jpg" alt="이미지"><em>opacity</em></a>
+                <a href="img/light08_s.jpg"><img src="img/light08.jpg" alt="이미지"><em>saturate</em></a>
+                <a href="img/light09_s.jpg"><img src="img/light09.jpg" alt="이미지"><em>sepia</em></a>
+                <a href="img/light010_s.jpg"><img src="img/light10.jpg" alt="이미지"><em>mix</em></a>
+             </div>
+             <!-- 라이트박스 끝//-->
              </article>
              <!-- //col 5-->
              
              
              <article class="column col6">             
-             <h4 class="col_tit"> Title </h4>
-             <p class="col_desc">이 곳은 설명 부분 입니다</p>
-             <!--내용입력 -->
+             <h4 class="col_tit"> Video </h4>
+             <p class="col_desc">반응형 영상을 보여주는 영역입니다.</p>
+             <!--video -->
              
-             <!-- 내용입력끝//-->
+             
+             <!--서버안에 파일로 있는 영상 넣기
+             <video autoplay="autoplay" controls="controls" loop="loop">
+                 <source src="파일명.mp4" type="video/mp4">
+             </video>
+             -->
+             
+             <!--유투브 링크 비디오 넣기-->
+             <div class="video">
+             <iframe src="https://www.youtube.com/embed/cbuZfY2S2UQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div> 
+             
+             <!-- video 끝//-->
              </article>
              <!-- //col 6-->
          </section>
@@ -318,26 +342,32 @@
          <section id="cont_right">
              <h3 class="ir_su">반응형 사이트 오른쪽 컨텐츠</h3>
              <article class="column col7">             
-             <h4 class="col_tit"> Title </h4>
-             <p class="col_desc">이 곳은 설명 부분 입니다</p>
+             <h4 class="col_tit"> Effect1 </h4>
+             <p class="col_desc">CSS3의 transform을 이용한 마우스 오버효과입니다.</p>
              <!--내용입력 -->
-             
+             <figure>
+                 <img src="img/side1.jpg" alt="이미지1">
+             </figure>
              <!-- 내용입력끝//-->
              </article>
              <!-- //col 7-->
              <article class="column col8">             
-             <h4 class="col_tit"> Title </h4>
-             <p class="col_desc">이 곳은 설명 부분 입니다</p>
+             <h4 class="col_tit"> Effect2 </h4>
+             <p class="col_desc">CSS3의 transform을 이용한 마우스 오버효과입니다.</p>
              <!--내용입력 -->
-             
+            <figure>
+                 <img src="img/side2.jpg" alt="이미지2">
+             </figure>
              <!-- 내용입력끝//-->
              </article>
              <!-- //col 8-->
              <article class="column col9">             
-             <h4 class="col_tit"> Title </h4>
-             <p class="col_desc">이 곳은 설명 부분 입니다</p>
+             <h4 class="col_tit"> Effect3 </h4>
+             <p class="col_desc">CSS3의 transform을 이용한 마우스 오버효과입니다.</p>
              <!--내용입력 -->
-             
+            <figure>
+            <img src="img/side3.jpg" alt="이미지3">
+             </figure>
              <!-- 내용입력끝//-->
              </article>
              <!-- //col 9-->
@@ -367,21 +397,27 @@
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/modernizr-custom.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/lightgallery.min.js"></script>
     <script>
-        
+    
+    //라이트박스
+        $(".lightbox").lightGallery({ 
+    });
+
         
     //이미지 슬라이더
 $(".slider").slick({
     dots: true,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: false,
+    arrows: true,
     responsive: [
         {
         breakpoint: 768,
         settings: {
+            autoplay:false,
         arrows: true,
-        dots: false
+        dots: true
         }
         }
     ]
