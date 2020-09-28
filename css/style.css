@@ -294,13 +294,13 @@ body {
 color:#878787; line-height: 18px; }
 .column .col1 {}
 .column .col2 {}
-.column .col3 {border-bottom: 0;}
+.column.col3 {border-bottom: 0;}
 .column .col4 {}
 .column .col5 {}
-.column .col6 {border-bottom: 0;}
+.column.col6 {border-bottom: 0;}
 .column .col7 {}
 .column .col8 {}
-.column .col9 {border-bottom: 0;}
+.column.col9 {border-bottom: 0;}
 
 /* 왼쪽 메뉴 */
 .menu {}
@@ -502,6 +502,27 @@ position: absolute; left:0; bottom: -30px; opacity: 1; transition: all .3s ease;
 .video {position: relative; width: 100%;padding-bottom: 56.25%; }
 .video iframe {position: absolute; width: 100%; height: 100%;}
 
+/*풋터*/
+
+.footer{ text-align: center; padding: 30px 50px;}
+.footer li{position: relative; display: inline; padding: 0 7px 0 10px; white-space: nowrap;}
+.footer address {padding-top: 15px;}
+
+.footer li:before{
+    content:'';
+    width: 1px; height: 12px;
+    background: #dbdbdb;
+    position: absolute; 
+    left: 0; top: 2px;
+}
+.footer ul li:first-child:before {
+    width: 0;
+}
+.footer strong {padding: 0 2px 0 2px;}
+
+
+
+
 /* 임의로 만들어 본 가라페이지 팝업 */
 #garapage {
     display: none;
@@ -590,10 +611,10 @@ position: absolute; left:0; bottom: -30px; opacity: 1; transition: all .3s ease;
         margin: 10px;
     }
     
-    .col7 {display: inline-block; width: 30.3333%;} 
-    .col8 {display: inline-block; width: 30.3333%;} 
-    .col9 {display: inline-block; width: 30.3333%;} 
-    
+    #cont_right{overflow: hidden;}
+    #cont_right .column {float: left; width: 33.3333%; box-sizing: border-box; }
+    #cont_right .column.col7{border-right: 1px solid #dbdbdb;}
+    #cont_right .column.col8{border-right: 1px solid #dbdbdb;}
 }
 
 /*화면 너비 0~768px*/
@@ -647,9 +668,18 @@ position: absolute; left:0; bottom: -30px; opacity: 1; transition: all .3s ease;
 .slider figcation em {font-size: 18px;}
 .slider figcation span{font-size: 14px;}
     
-    .square a {width: 49%;}
-    .square a:nth-child(5) {display: none;}
+.square a {width: 49%;}
+.square a:nth-child(5) {display: none;}
+    
+    #cont_right .column {width: 50%;}
+    #cont_right .column.col8 {border-right: 0;}
+    #cont_right .column.col9 {display: none;}
+    
+    
 }
+
+
+
 
 /*화면 너비 0~480px*/
 @media (max-width: 480px) {}
